@@ -1,0 +1,131 @@
+****************************
+This software ("Vcellid") is being released under the GNU lesser public
+license. A copy of the license is in the file
+"GNU_Lesser_General_Public_License.txt." The code is
+copyright (c) 2008 Ariel Chernomoretz.
+****************************
+
+Vcellid is a graphic user interface for the Cell-ID software developed
+by Andrew Gordon. It was originally designed to provide a rapid visual
+feedback of the effects of different segmentation parameter values, and to
+ease the analysis of cell-tracking time course experiments.
+
+****************************
+
+If you downloaded a tar.gz file to unpack the tar file, do
+
+tar -zxvf vcellid-0.2.tar.gz
+
+in any directory.
+
+For a zip compressed distribution file, do
+
+unzip vcellid-0.2.zip
+
+A subdirectory vcellid-0.2 will be created.
+
+*******************************************
+Outline of the rest of this file:
+
+1) Compiling Vcellid
+2) Running Vcellid
+3) Output
+
+***************************************
+1) COMPILING
+
+The code is written in C, and the GTK library (www.gtk.org) is used to
+implement the graphical interface.  In addition, the GtkImageView library
+is also needed to compile the code.
+
+1.0) MinGW
+The toolchain used to build the gtk related libraries, VcellID, and CellID
+applications was the MGWin (Minimalist GNU for Windows) framework.
+MinGW32 and MSys could be installed from www.mingw.org.
+Alternatively, in our site we provide the following installation 
+executable files:
+
+  MinGW-5.1.4.exe
+
+  MSYS-1.0.10.exe
+
+1.1) GTK libs
+If not already installed in your system, you can download the GTK libraries
+from www.gtk.org/download-windows.html. We suggest you grab the all-in-one bundle.
+Alternatively, in our site we provide the following all-in-one bundle: 
+ 
+ gtk+-bundleX-2.12.9
+
+Besides gtk base libraries, our bundle already includes the necessary gtkimageview
+libraries so, if you choose this last option you can skip step 1.2)
+
+1.2) Gtkimageview
+   You shoud compile this gtk lib following this steps
+   1.2.a) Download an unzip the provided tar.gz file. 
+   1.2.b) Open a Msys terminal and add the following line to the 
+          /etc/profile file (C:\msys-1.0\etc\profile)
+            export PATH="/c/gtk+-bundle-2.12.9/bin:$PATH"
+        This will include the bin directory of the gtk package to the 
+        msys environment variable PATH, which is needed to compile gtkimageview library 
+        (yes, we assume that you have installed the gtk+ bundle file in 
+         c:\gtk+=bundle-2.12.9)
+   1.2.c) cd to the gtkimageview directory and type the following:
+            ./configure CFLAGS=-I/c/gtk+-bundle-2.12.9/include
+   1.2.d) type the following to compile the library
+            make
+   1.2.e) type the following:
+            make install
+
+   The last command will install the already compiled libraries into
+   /usr/local/bin and /usr/local/lib directories
+   (c:\msys-1.0\local\bin , and c:\msys-1.0\local\lib dirs respectively)
+
+1.3) 
+   1.3.a) Open a Msys terminal an cd to the vcellid-0.2 directory.
+   1.3.b) type 
+ 
+     ./configure CFLAGS="-I/c/gtk+-bundle-2.12.9/include -I/usr/local/include" LDFLAGS="-L/c/gtk+-bundle-2.12.9/lib -L/usr/local/lib" LIBS=-lgtkimageview
+
+   1.3.c) type
+
+      make
+
+   1.3.d) type
+
+      make install
+
+1.4)  Your system should be ready to run Vcellid from a msys terminal.
+If you want to be able to execute the code from a cmd.exe windows terminal
+or from a direct access to the program
+then you should add c:\gtk+-bundle-2.12.9\bin to your windows PATH environment
+variable. To do that:
+ Control Panel->System->Environment Variables
+Choose the Path system variable, select Modify, and
+add "c:\gtk+-bundle-2.12.9\bin;" at the beginning of the line. 
+
+
+***************************************
+2) RUNNING Vcell
+
+
+From a terminal type
+ 
+  vcellid
+
+Alternatively you can generate a direct access, put it in your
+Desktop and launch VcellID double-clicking it.
+
+
+A user manual, describing the basic functionality of Vcellid is
+included in the distribution package.
+
+
+
+**************************************
+3) OUTPUTS
+
+Once the desired segmentation parameters were tuned, a call to
+Cell-ID can be automatically performed.
+As a result of the spawned Cell-ID image-processing session
+Cell-Id output files are generated. See Cell-Id documentation
+for further details.

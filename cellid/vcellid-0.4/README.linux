@@ -1,0 +1,99 @@
+****************************
+This software ("Vcellid") is being released under the GNU lesser public
+license. A copy of the license is in the file
+"GNU_Lesser_General_Public_License.txt." The code is
+copyright (c) 2008 Ariel Chernomoretz.
+****************************
+
+Vcellid is a graphic user interface for the Cell-ID software developed
+by Andrew Gordon. It was originally designed to provide a rapid visual
+feedback of the effects of different segmentation parameter values, and to
+ease the analysis of cell-tracking time course experiments.
+
+****************************
+
+If you downloaded a tar.gz file to unpack the tar file, do
+
+tar -zxvf vcellid-0.2.tar.gz
+
+in any directory.
+
+For a zip compressed distribution file, do
+
+unzip vcellid-0.2.zip
+
+A subdirectory vcellid-0.2 will be created.
+
+*******************************************
+Outline of the rest of this file:
+
+1) Compiling Vcellid
+2) Running Vcellid
+3) Output
+
+***************************************
+1) COMPILING
+The code is written in C, and the GTK library (www.gtk.org) is used to
+implement the graphical interface.  In addition, the GtkImageView library
+is also needed to compile the code.
+
+If not already installed in your system, you can download the GTK libraries
+from www.gtk.org/download-linux.html. You should grab GTK+, Glib, and Pango
+libraries and follow the installation instructions. You should need root 
+privileges to succesfully complete the installation procedure.
+
+You should also install the GtkImageView library. There are some rpm
+availables in the web. Alternatively you can download the
+source from the same web site you grabbed Vcellid and follow the
+compilation/installation instructions. Again, you should probably need root 
+privileges to succesfully complete the installation procedure.
+
+In order to compile Vcellid
+
+ cd vcellid-0.2
+
+and type 
+
+ ./configure LDFLAGS=-L<path_to_libgtkimageview>
+
+where <path_to_libgtkimageview> is the path where gtkimageview libraries were
+installed (by default: /usr/local/lib )
+
+To compile type
+
+  make
+
+The output of the make command is the executable called "vcellid"
+in the vcellid-0.2 directory.
+Finally, if you want a system-wide installation you need to be root and type
+
+  make install
+
+
+***************************************
+2) RUNNING Vcell
+
+If you did not install Vcellid in a system-wide manner, 
+cd to the vcellid-0.2/src directory and type
+ 
+  ./vcellid
+
+Otherwise,  typing
+ 
+  vcellid
+
+from wherever location you are should do the job
+
+A user manual, describing the basic functionality of Vcellid is
+included in the distribution package.
+
+
+
+**************************************
+3) OUTPUTS
+
+Once the desired segmentation parameters were tuned, a call to
+Cell-ID can be automatically performed.
+As a result of the spawned Cell-ID image-processing session
+Cell-Id output files are generated. See Cell-Id documentation
+for further details.

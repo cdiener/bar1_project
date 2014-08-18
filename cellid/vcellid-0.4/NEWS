@@ -1,0 +1,11 @@
+# v0.4
++ More efficient CheckExecFile using g_file_test
++ UTF8 used in GetFileNames function
++ Backgd illumination and Uneven illumination correction images are 
+better handled.
+  + LoadImages, LaunchCellID and WriteTXT_Set can handle Backgd and uneven correction images
+  + Popup cannot be displayed over correction images.
+
+# v0.3
++ Implementation of brightfield/fluorescence file mapping using metamorph image embedded timetag
+

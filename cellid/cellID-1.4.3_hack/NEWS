@@ -1,0 +1,3 @@
+Changes in version 1.4.3
+	* minor bug of the command line parsing routine corrected.
+          Folders containing "-p" in their pathnames can be handled.

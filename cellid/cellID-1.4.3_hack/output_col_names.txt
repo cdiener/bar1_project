@@ -1,0 +1,19 @@
+cellID \tt.frame\t time \t xpos \t ypos \t f.tot  \t a.tot  \t
+num.pix \tfft.stat \t perim  \t maj.axis \t min.axis \t f.nucl \t 
+a.nucl \t flag \t rot.vol \t con.vol \t a.vacuole \t f.vacuole \t f.bg   \t 
+20
+f.tot.p1 \t a.tot.p1 \t f.tot.m1 \t a.tot.m1 \t f.tot.m2 \t 
+a.tot.m2 \t f.tot.m3 \t a.tot.m3 \t  
+8
+f.nucl1 \t f.nucl.tag1 \t a.nucl1 \t f.nucl2 \t f.nucl.tag2 \t 
+a.nucl2 \t f.nucl3 \t f.nucl.tag3 \t a.nucl3 \t f.nucl4 \t 
+f.nucl.tag4 \t a.nucl4 \t f.nucl5 \t f.nucl.tag5 \t a.nucl5 \t 
+f.nucl6 \t f.nucl.tag6 \t a.nucl6 \t f.nucl7 \t f.nucl.tag7 \t 
+a.nucl7 \t f.nucl8 \t f.nucl.tag8 \t a.nucl8 \t 
+24
+local.bg \t local.bg.num \t local.num \t local2.bg \t
+local2.bg.num \t local2.num \t 
+6
+a.surf \t con.vol \t sphere.vol
+3
+   
