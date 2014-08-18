@@ -1,0 +1,10 @@
+################################
+# Dune module information file #
+################################
+
+#Name of the module
+Module: ExtracellularCommunication
+Version: 0.1
+Maintainer: wolfgang.giese@rocketmail.com
+#depending on 
+Depends: dune-common dune-grid dune-istl dune-localfunctions dune-pdelab
